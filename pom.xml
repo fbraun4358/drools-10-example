@@ -22,7 +22,7 @@
 		<maven.compiler.version>3.13.0</maven.compiler.version>
 
 		<!-- Runtime -->
-		<drools.version>7.74.1.Final</drools.version>
+		<drools.version>10.0.0</drools.version>
 		<protobuf.version>4.29.2</protobuf.version>
 		<xstream.version>1.4.21</xstream.version>
 		
@@ -41,27 +41,6 @@
 				<type>pom</type>
 				<version>${drools.version}</version>
 				<scope>import</scope>
-			</dependency>
-
-			<!-- define jbpm BOM -->
-			<dependency>
-				<groupId>org.jbpm</groupId>
-				<artifactId>jbpm-bom</artifactId>
-				<type>pom</type>
-				<version>${drools.version}</version>
-				<scope>import</scope>
-			</dependency>
-			
-			<dependency>
-				<groupId>com.google.protobuf</groupId>
-				<artifactId>protobuf-java</artifactId>
-				<version>${protobuf.version}</version>
-			</dependency>
-			
-			<dependency>
-			    <groupId>com.thoughtworks.xstream</groupId>
-			    <artifactId>xstream</artifactId>
-			    <version>${xstream.version}</version>
 			</dependency>
 			
 			<!-- Test Time -->

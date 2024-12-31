@@ -31,6 +31,7 @@
 		<equalsverifier.version>3.17.4</equalsverifier.version>
 		<mockito.version>5.14.2</mockito.version>
 	</properties>
+	
 	<dependencyManagement>
 		<dependencies>
 			<!-- define drools BOM -->
@@ -103,6 +104,37 @@
 					<extensions>true</extensions>
 				</plugin>
 				
+				<!-- for m2e integration -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.kie</groupId>
+										<artifactId>kie-maven-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>build</goal>
+											<goal>generateANC</goal>
+											<goal>generateDMNModel</goal>
+											<goal>generateModel</goal>
+											<goal>generatePMMLModel</goal>
+											<goal>injectreactive</goal>
+											<goal>validateDMN</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		
@@ -114,4 +146,9 @@
 		</plugins>
 		
 	</build>
+	<modules>
+		<module>drools-core</module>
+		<module>drools-rulebase</module>
+		<module>drools-ws</module>
+	</modules>
 </project>

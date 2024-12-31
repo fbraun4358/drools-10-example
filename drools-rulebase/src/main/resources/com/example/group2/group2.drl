@@ -1,0 +1,24 @@
+package com.example.group2
+
+import com.example.facts.IntegerFact;
+import com.example.facts.StringFact;
+
+rule "Insert Group 2 Fact"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	IntegerFact(myT == 2)
+  	not		IntegerFact(myT == 3)
+then
+	insertLogical(new StringFact("Group 2 Fired."));
+end
+
+rule "Insert Group 2 Fact - take 2"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	insert(new IntegerFact(3));
+	insert(new StringFact("Group 2 Second Rule Fired."));
+end

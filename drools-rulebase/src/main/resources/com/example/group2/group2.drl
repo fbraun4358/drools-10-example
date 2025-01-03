@@ -22,3 +22,93 @@ then
 	insert(new IntegerFact(3));
 	insert(new StringFact("Group 2 Second Rule Fired."));
 end
+
+rule "Extra Rule 1"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	System.out.println("Extra Rule 1");
+end
+
+rule "Extra Rule 2"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	System.out.println("Extra Rule 2");
+end
+
+rule "Extra Rule 3"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	System.out.println("Extra Rule 3");
+end
+
+rule "Extra Rule 4"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	System.out.println("Extra Rule 4");
+end
+
+rule "Extra Rule 5"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	System.out.println("Extra Rule 5");
+end
+
+rule "Extra Rule 6"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	System.out.println("Extra Rule 6");
+end
+
+rule "Extra Rule 7"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	System.out.println("Extra Rule 7");
+end
+
+rule "Extra Rule 8"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	System.out.println("Extra Rule 8");
+end
+
+rule "Extra Rule 9"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	System.out.println("Extra Rule 9");
+end
+
+rule "Extra Rule 10"
+@filename("group2.drl")
+ruleflow-group "GROUP_2"
+when
+  	$fact:	StringFact(myT == "Group 2 Fired.")
+then
+	System.out.println("Extra Rule 10");
+end

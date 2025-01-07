@@ -2,6 +2,8 @@ package com.example.group1
 
 import com.example.facts.StringFact;
 
+import accumulate com.example.accumulate.FactGroupByValueAccumulationFunction groupByValue;
+
 rule "Insert Group 1 Fact"
 @filename("group1.drl")
 ruleflow-group "GROUP_1"
@@ -9,4 +11,14 @@ when
   	$fact:	StringFact(myT == "1")
 then
 	insert(new StringFact("Group 1 Fired."));
+end
+
+rule "Group 1 Accumulate"
+@filename("group1.drl")
+ruleflow-group "GROUP_1"
+when
+  	$map:	Map(size > 0) from accumulate( $fact: StringFact(myT == "1"), groupByValue($fact))
+then
+	System.out.println("Group 1 accumulate Fired.");
+	System.out.println($map);
 end
